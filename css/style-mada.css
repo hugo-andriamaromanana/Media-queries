@@ -1,0 +1,502 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 48px;
+  color: #fafafa;
+  background: #141e30;
+  background: -webkit-linear-gradient(to right, #141e30, #243b55);
+  background: linear-gradient(to right, #141e30, #243b55);
+  background-repeat: none;
+}
+header {
+  background: url(../assets/assets-madagascar/pikrepo.jpg);
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  font-family: "Roboto", sans-serif;
+  font-size: 50px;
+}
+section {
+  margin: 3vh 2vw;
+  padding-top: 50px;
+}
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 8vh;
+  font-weight: bold;
+  margin-bottom: 3vh;
+}
+
+/* ######### NAVBAR ######### */
+
+:root {
+  --height-menu: 60px;
+  --bcg-color-navbar: transparent;
+  --font-color-navbar: black;
+  --bcg-color-sub-menu: rgba(255, 255, 255, 0.7);
+  --font-color-sub-menu: rgba(33, 112, 214, 0.8);
+  --border-bottom-color: rgba(33, 112, 214, 0.8);
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto", sans-serif;
+}
+nav {
+  width: 100%;
+  font-size: 18px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+nav > ul {
+  display: flex;
+  text-align: center;
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  height: var(--height-menu);
+}
+nav ul {
+  list-style-type: none;
+}
+nav > ul > li {
+  background-color: var(--bcg-color-navbar);
+  position: relative;
+  height: 100%;
+  flex: 1;
+}
+nav > ul > li:hover > a {
+  color: #2169ec;
+}
+nav > ul > li > a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+li a {
+  text-decoration: none;
+  color: var(--font-color-navbar);
+}
+.dropdown-1 > a:after {
+  content: "❯";
+  font-size: 15px;
+  margin-left: 7px;
+  display: inline-block;
+}
+.dropdown-1:hover > a:after {
+  animation: rotatearrow 0.2s linear forwards;
+  color: grey;
+}
+@keyframes rotatearrow {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+.sub-menu {
+  margin-top: var(--height-menu);
+  width: 100%;
+  text-align: left;
+  overflow: hidden;
+  max-height: 0;
+  color: var(--font-color-sub-menu);
+  border-radius: 8px;
+  background-color: var(--bcg-color-sub-menu);
+  position: relative;
+  z-index: 999;
+}
+.dropdown-1:hover > .sub-menu {
+  animation: submenuappear 1s forwards;
+}
+@keyframes submenuappear {
+  0% {
+    box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0);
+    border-top: 3px solid #2169ec;
+  }
+  30% {
+    box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    max-height: 50em;
+    border-top: 3px solid #2169ec;
+    box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
+  }
+}
+.sub-menu > li:hover {
+  background-color: rgba(33, 105, 236, 0.3);
+  position: relative;
+  z-index: 999;
+}
+.sub-menu > li > a {
+  align-items: center;
+  display: flex;
+  height: 50px;
+  padding-left: 20px;
+  width: 100%;
+}
+.sub-menu > li:hover > a {
+  color: var(--font-color-sub-menu);
+}
+
+/* #############End NAVBAR ###########*/
+
+/* ##### MAIN ###### */
+
+.pres-country {
+  display: flex;
+  flex-direction: row;
+  padding: 20px 50px;
+  flex-wrap: wrap;
+  background-size: 100%;
+}
+.container-left {
+  width: 33%;
+}
+.container-left h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 70px;
+  color: rgb(247, 247, 247);
+  -webkit-text-stroke: 2px rgb(0, 0, 0);
+}
+.container-left p {
+  font-family: "Roboto", sans-serif;
+  font-size: 19px;
+  letter-spacing: 2px;
+  color: white;
+  font-weight: bold;
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
+}
+
+/* ##### Carousel ###### */
+
+.container-right {
+  position: relative;
+  perspective: 1000px;
+  margin-left: 525px;
+  margin-top: 450px;
+}
+#carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  transform: rotateY(-360deg) translateZ(+300px);
+  animation: animate 25s steps(10000, end) infinite;
+  z-index: 0;
+}
+#carousel:hover {
+  animation-play-state: paused;
+}
+#carousel div {
+  display: block;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  border: 0px solid #000;
+}
+#carousel div img {
+  width: 150px;
+  height: 100px;
+  border-radius: 5%;
+  object-fit: cover;
+  cursor: pointer;
+  position: absolute;
+  z-index: -1;
+}
+#carousel div:nth-child(1) {
+  transform: rotateY(0deg) translateZ(250px);
+}
+#carousel div:nth-child(2) {
+  transform: rotateY(60deg) translateZ(250px);
+}
+#carousel div:nth-child(3) {
+  transform: rotateY(120deg) translateZ(250px);
+}
+#carousel div:nth-child(4) {
+  transform: rotateY(180deg) translateZ(250px);
+}
+#carousel div:nth-child(5) {
+  transform: rotateY(240deg) translateZ(250px);
+}
+#carousel div:nth-child(6) {
+  transform: rotateY(300deg) translateZ(250px);
+}
+@keyframes animate {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
+/* ##### Carousel END ##### */
+
+/* ##### Cities ##### */
+
+.mada-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.mada-countries {
+  padding: 2rem 0;
+}
+.mada-header {
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-size: 50px;
+  margin-top: 50px;
+}
+.mada-countries-slider {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  align-items: center;
+}
+.mada-countries-slider a {
+  cursor: pointer;
+}
+.mada-countries-slider a:hover {
+  font-size: 18px;
+}
+.mada-country {
+  margin: 20px 0;
+  display: grid;
+  grid-template: repeat(1, 250px) / repeat(3, 1fr);
+  gap: 10px;
+  justify-content: space-around;
+}
+.mada-country img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.mada-active {
+  font-size: 18px;
+  border: solid 1px;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+/* ##### END Cities ##### */
+
+/* ##### AMBASSADE ##### */
+
+.mada-ambassade-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+  font-size: 2.5rem;
+  border-radius: 15px;
+  flex-direction: row;
+}
+.mada-ambassade-box-left {
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 20vw;
+}
+.mada-ambassade-sommaire {
+  box-sizing: border-box;
+  width: 100%;
+  align-items: flex-start;
+  text-align: center;
+  font-size: 20px;
+  line-height: 20px;
+}
+.mada-ambassade {
+  width: 20vw;
+  height: 30vh;
+  border-radius: 25px;
+  box-sizing: border-box;
+  padding: 5px;
+}
+.mada-ambassade-box-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: 35vw;
+}
+.mada-ambassade-maps {
+  width: 23vw;
+  height: 35vh;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+.mada-ambassade-contact {
+  text-align: center;
+  font-size: 20px;
+  box-sizing: border-box;
+  margin: 10px 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  text-decoration: underline;
+}
+.mada-ambassade-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 25vw;
+  line-height: 20px;
+}
+.mada-ambassade-adresse {
+  font-size: 15px;
+  box-sizing: border-box;
+}
+.mada-ambassade-numero {
+  font-size: 15px;
+  box-sizing: border-box;
+  margin-right: 20px;
+  text-align: start;
+}
+.mada-ambassade-site {
+  font-size: 15px;
+  box-sizing: border-box;
+  color: #bbbbbb;
+}
+.icon {
+  margin-right: 10px;
+}
+
+/* ##### END AMBASSADE ##### */
+
+/* ############ FOOD SECTION ###########*/
+
+.mada-food {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: url('http://www.orinasako.mg/wp-content/uploads/2017/05/18575289_10209374026536379_1815627985_o-1.jpg');
+  background-size: 100%;
+  margin: 100px 0;
+}
+.mada-food img {
+  height: 250px;
+  width: auto;
+  margin: 0 50px;
+  position: relative;
+  border-radius: 5%;
+}
+
+/* ############ END FOOD SECTION ###########*/
+
+/* ############ END MAIN ###########*/
+
+/* ############ FOOTER ###########*/
+
+footer {
+  margin-top: 100px;
+}
+.logo img {
+  width: 250px;
+  margin-top: 20px;
+  padding-right: 20px;
+}
+.container {
+  max-width: 1500px;
+  margin: auto;
+  position: relative;
+  z-index: 100;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+ul {
+  list-style: none;
+}
+.footer {
+  background-color: #24262b;
+  padding: 70px 0;
+}
+.footer-col {
+  width: 25%;
+  padding: 0 15px;
+}
+.footer-col h4 {
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer-col h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #731ee9;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+  scale: 1.15;
+}
+/*responsive*/
+@media (max-width: 767px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 574px) {
+  .footer-col {
+    width: 100%;
+  }
+}
+/* ########### END Footer ########### */

@@ -1,0 +1,303 @@
+/* RESET NAVIGATEUR */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* FIN RESET */
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {    
+    text-decoration: none;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+}
+
+header{
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+header a {
+    position: relative;
+}
+
+
+main{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    min-height: 100vh;
+    color: #fff;
+    position: relative;
+    background-image: linear-gradient(to bottom, #714c80,#3e3b43,#3e3b43,#3e3b43, #3e3b43, #3e3b43, #3e3b43);
+}
+.containers-top{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;     
+    left: 4em;
+}
+.cards{
+    position: relative;
+   width: 300px;
+   height: 450px;
+    transition: 0.3 ease-out;
+
+}
+.cards .imgbox{
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+.cards .imgbox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    display: block;
+    transition: 0.5s;
+    border-radius: 5%;
+    object-fit: cover;
+}
+.cards .txt{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    padding: 12px;
+    transition: all 0.5s cubic-bezier(.48, -0.28, 0.41,1.4);
+    box-sizing: border-box;
+    overflow: hidden;
+    }
+    .cards:hover .txt{
+        width: 100%;
+        height: 75%;
+        left: 0;
+        bottom: 0;
+        color: white;
+    }
+    .txt p{
+        margin: 10px 0 0;
+        padding: 1em 1em;
+        transform: translate(2em);
+        line-height: 1.3em;
+        transition: 0.3s;
+        text-align: justify;
+        opacity: 0;
+    }
+    .cards:hover .txt p{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .txt h1{
+        transform: translate(2em);
+        line-height: 1.3em;
+        transition: 0.3s;
+        text-align: justify;
+        opacity: 0;
+    }
+    .cards:hover .txt h1{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .containers-top .cards{
+    margin-right: 8em;   
+    }
+    .containers-bottom{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        position: relative;     
+        left: 4em;
+        top: 50px;
+    }
+    .containers-bottom .cards{
+        margin-right: 8em;   
+        }
+    .cards:hover img{
+    filter: brightness(75%);
+    box-shadow: 0 0 10vw 0vw rgb(149, 173, 255),
+    0 0 2vw 0.4vw rgb(65, 67, 209)
+    }
+header .img-para{
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    object-fit: cover;
+}
+.title{
+    display: flex;
+    position: relative;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Bebas Neue';
+    font-size: 100px;
+    letter-spacing: .2rem;
+    font-weight: bold;
+    text-shadow: #3e3b43;
+}
+.title a {
+    color: white;
+    right: 0;
+}
+.img-parac{
+    position: relative;
+    overflow: hidden;
+    height: 10%; 
+   top: 80%;
+}
+
+
+  .logo img {
+    width: 250px;
+    margin-top: 20px;
+    padding-right: 20px;
+  }
+  .container {
+    max-width: 1500px;
+    margin: auto;
+    position: relative;
+    z-index: 100;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+  }
+  ul {
+    list-style: none;
+  }
+  .footer {
+    background-color: #24262b;
+    padding: 70px 0;
+  }
+  .footer-col {
+    width: 15%;
+    padding: 0 15px;
+    margin: 15px 15px;
+  }
+  .footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+  }
+  .footer-col h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #731ee9;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+  }
+  .footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  .footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  .footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+  }
+  .footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+  }
+  .footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+    scale: 1.15;
+  }
+  
+  /*responsive*/
+  @media (max-width: 767px) {
+    .footer-col {
+      width: 50%;
+      margin-bottom: 30px;
+    }
+  }
+  @media (max-width: 574px) {
+    .footer-col {
+      width: 100%;
+    }
+  }
